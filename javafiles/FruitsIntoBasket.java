@@ -61,8 +61,10 @@ public class FruitsIntoBasket {
                 baskets = new HashMap<>();
                 baskets.put(currentTree, true);
                 baskets.put(trees[windowEnd - 1], true);
+                // reposition window start to just before window end
                 windowStart = windowEnd - 1;
 
+                // extend window start to include previous fruits of same type
                 while (trees[windowStart] == trees[windowStart - 1]) {
                     windowStart--;
                 }
